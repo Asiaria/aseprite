@@ -1,5 +1,5 @@
 // Aseprite Document Library
-// Copyright (C) 2019-2021  Igara Studio S.A.
+// Copyright (C) 2019-2022  Igara Studio S.A.
 // Copyright (C) 2001-2016  David Capello
 //
 // This file is released under the terms of the MIT license.
@@ -116,7 +116,7 @@ Remap create_remap_to_change_palette(
       rgba_geta(color), maskIndex);
 
     if (j < 0)
-      j = newPalette->findBestfit(
+      j = newPalette->findBestfit3(
         rgba_getr(color),
         rgba_getg(color),
         rgba_getb(color),

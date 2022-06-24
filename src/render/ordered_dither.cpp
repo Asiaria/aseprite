@@ -66,7 +66,7 @@ doc::color_t OrderedDither::ditherRgbPixelToIndex(
   int a = doc::rgba_geta(color);
   doc::color_t nearest1idx =
     (rgbmap ? rgbmap->mapColor(r, g, b, a):
-              palette->findBestfit(r, g, b, a, m_transparentIndex));
+              palette->findBestfit3(r, g, b, a, m_transparentIndex));
 
   doc::color_t nearest1rgb = palette->getEntry(nearest1idx);
   int r1 = doc::rgba_getr(nearest1rgb);
@@ -88,7 +88,7 @@ doc::color_t OrderedDither::ditherRgbPixelToIndex(
   a2 = std::clamp(a2, 0, 255);
   doc::color_t nearest2idx =
     (rgbmap ? rgbmap->mapColor(r2, g2, b2, a2):
-              palette->findBestfit(r2, g2, b2, a2, m_transparentIndex));
+              palette->findBestfit3(r2, g2, b2, a2, m_transparentIndex));
 
   // If both possible RGB colors use the same index, we cannot
   // make any dither with these two colors.
@@ -157,7 +157,7 @@ doc::color_t OrderedDither2::ditherRgbPixelToIndex(
   // Find the best palette entry for the given color.
   const int index =
     (rgbmap ? rgbmap->mapColor(r, g, b, a):
-              palette->findBestfit(r, g, b, a, m_transparentIndex));
+              palette->findBestfit3(r, g, b, a, m_transparentIndex));
 
   const doc::color_t color0 = palette->getEntry(index);
   const int r0 = doc::rgba_getr(color0);

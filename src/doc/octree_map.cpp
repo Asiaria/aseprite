@@ -1,5 +1,5 @@
 // Aseprite
-// Copyright (c) 2020-2021 Igara Studio S.A.
+// Copyright (c) 2020-2022 Igara Studio S.A.
 //
 // This file is released under the terms of the MIT license.
 // Read LICENSE.txt for more information.
@@ -341,10 +341,10 @@ void OctreeMap::regenerateMap(const Palette* palette, const int maskIndex)
   }
   else {
     m_maskColor = palette->getEntry(maskIndex);
-    maskColorBestFitIndex = palette->findBestfit(rgba_getr(m_maskColor),
-                                                 rgba_getg(m_maskColor),
-                                                 rgba_getb(m_maskColor),
-                                                 rgba_geta(m_maskColor), maskIndex);
+    maskColorBestFitIndex = palette->findBestfit3(rgba_getr(m_maskColor),
+                                                  rgba_getg(m_maskColor),
+                                                  rgba_getb(m_maskColor),
+                                                  rgba_geta(m_maskColor), maskIndex);
   }
 
   for (int i=0; i<palette->size(); i++) {

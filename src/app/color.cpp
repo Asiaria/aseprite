@@ -862,7 +862,7 @@ int Color::getIndex() const
       if (i >= 0)
         return i;
       else
-        return get_current_palette()->findBestfit(getRed(), getGreen(), getBlue(), getAlpha(), 0);
+        return get_current_palette()->findBestfit3(getRed(), getGreen(), getBlue(), getAlpha(), 0);
     }
 
     case Color::IndexType:

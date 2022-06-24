@@ -433,7 +433,7 @@ void ColorPopup::onSimpleColorClick()
   int a = color.getAlpha();
 
   // Search for the closest color to the RGB values
-  int i = g_simplePal->findBestfit(r, g, b, a, 0);
+  int i = g_simplePal->findBestfit3(r, g, b, a, 0);
   if (i >= 0) {
     color_t c = g_simplePal->getEntry(i);
     color = app::Color::fromRgb(doc::rgba_getr(c),
@@ -513,7 +513,7 @@ void ColorPopup::findBestfitIndex(const app::Color& color)
   int a = color.getAlpha();
 
   // Search for the closest color to the RGB values
-  int i = get_current_palette()->findBestfit(r, g, b, a, 0);
+  int i = get_current_palette()->findBestfit3(r, g, b, a, 0);
   if (i >= 0) {
     m_colorPalette->deselect();
     m_colorPalette->selectColor(i);

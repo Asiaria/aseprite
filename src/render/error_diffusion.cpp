@@ -73,7 +73,7 @@ doc::color_t ErrorDiffusionDither::ditherRgbToIndex2D(
 
   const doc::color_t index =
     (rgbmap ? rgbmap->mapColor(v[0], v[1], v[2], v[3]):
-              palette->findBestfit(v[0], v[1], v[2], v[3], m_transparentIndex));
+              palette->findBestfit3(v[0], v[1], v[2], v[3], m_transparentIndex));
 
   doc::color_t palColor = palette->getEntry(index);
   if (m_transparentIndex == index || doc::rgba_geta(palColor) == 0) {

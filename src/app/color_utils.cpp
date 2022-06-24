@@ -1,5 +1,5 @@
 // Aseprite
-// Copyright (C) 2020  Igara Studio S.A.
+// Copyright (C) 2020-2022  Igara Studio S.A.
 // Copyright (C) 2001-2017  David Capello
 //
 // This program is distributed under the terms of
@@ -168,7 +168,7 @@ doc::color_t color_utils::color_for_target_mask(const app::Color& color, const C
 
           c = get_current_palette()->findExactMatch(r, g, b, a, mask);
           if (c < 0)
-            c = get_current_palette()->findBestfit(r, g, b, a, mask);
+            c = get_current_palette()->findBestfit3(r, g, b, a, mask);
         }
         break;
       case IMAGE_TILEMAP:
